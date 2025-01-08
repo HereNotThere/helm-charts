@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root-app
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/HereNotThere/helm-charts.git
+    path: charts/root-app/
+    targetRevision: HEAD
+  destination:
+    server: gke_hnt-argo-cd_us-central1_argo-cd-cluster-1
+    namespace: default
+  syncPolicy:
+    automated:
+      selfHeal: true
