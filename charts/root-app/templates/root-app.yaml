@@ -11,7 +11,7 @@ spec:
     path: charts/root-app/
     targetRevision: HEAD
   destination:
-    server: gke_hnt-argo-cd_us-central1_argo-cd-cluster-1
+    server: https://kubernetes.default.svc
     namespace: default
   syncPolicy:
     automated:
