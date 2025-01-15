@@ -132,3 +132,14 @@ datadog:
   providers:
     gke:
       autopilot: true
+
+prometheus:
+  # https://github.com/prometheus-community/helm-charts/blob/main/charts/prometheus/values.yaml
+  prometheus-node-exporter:
+    enabled: false
+  prometheus-pushgateway:
+    enabled: false
+  kube-state-metrics:
+    enabled: false
+  alertmanager:
+    enabled: false
