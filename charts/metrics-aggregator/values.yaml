@@ -124,7 +124,11 @@ affinity: {}
 
 datadog:
   # https://github.com/DataDog/helm-charts/blob/main/charts/datadog/values.yaml
-  apiKeyExistingSecret: datadog-secret
-  site: datadoghq.com
+  datadog:
+    apiKeyExistingSecret: datadog-secret
+    site: datadoghq.com
   clusterAgent:
     enabled: false
+  providers:
+    gke:
+      autopilot: true
