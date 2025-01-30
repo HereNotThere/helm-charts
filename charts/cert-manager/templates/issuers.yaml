@@ -1,0 +1,20 @@
+{{- range $envName, $envData := .Values.environments }}
+---
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt-{{ $envName }}
+  annotations:
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-weight": "1"
+spec:
+  acme:
+    server: {{ $envData.server }}
+    email: {{ $envData.email }}
+    privateKeySecretRef:
+      name: letsencrypt-{{ $envName }}
+    solvers:
+      - http01:
+          ingress:
+            ingressClassName: nginx
+{{- end }}
