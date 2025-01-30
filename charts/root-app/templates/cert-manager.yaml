@@ -12,8 +12,8 @@ spec:
     path: charts/cert-manager
     targetRevision: HEAD
     helm:
-      valuesFiles:
-        - values.yaml
+      valueFiles:
+      - values.yaml
   syncPolicy:
     automated:
       prune: true
