@@ -1,0 +1,9 @@
+dependencies:
+- name: datadog
+  repository: https://helm.datadoghq.com
+  version: 3.0.4
+- name: prometheus
+  repository: https://prometheus-community.github.io/helm-charts
+  version: 26.1.0
+digest: sha256:d9a35de533f1ec8f91cc1975c61ab9b1b9f019e8c6c8a0aeb6141216729026ee
+generated: "2025-01-15T15:49:42.481171-07:00"
